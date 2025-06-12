@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: social-search-app
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: GOOGLE_API_KEY
+        value: your_google_api_key
+      - key: GOOGLE_CSE_ID
+        value: your_custom_search_engine_id
